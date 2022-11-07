@@ -1,0 +1,11 @@
+<p>Je m'appelle {{ name }} </p>
+
+<input [(ngModel)]="name" type="text" class="form-control">
+
+<div [hidden]="hd" [style.backgroundColor]="color">
+    La Poste
+</div>
+
+<button (click)="traitement()" class="btn btn-primary">Click me</button>
+
+<app-child (msgToParent)="traitementDuParent($event)"></app-child>
