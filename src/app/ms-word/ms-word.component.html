@@ -1,0 +1,18 @@
+<div [ngStyle]="{
+    'backgroundColor' : bgColor,
+    'color' : txtColor,
+    'fontSize' : txtSize,
+    'fontFamily' : txtFont
+}">Formation avec La Poste TN</div>
+
+<label for="">backgroundColor :</label>
+<input [(ngModel)]="bgColor" type="text" class="form-control">
+<label for="">Text Color :</label>
+<input [(ngModel)]="txtColor" type="text" class="form-control">
+<label for="">Text Size :</label>
+<input #inp (change)="changeSize(inp.value)" type="number" class="form-control">
+
+<label for="">Text Font :</label>
+<select [(ngModel)]="txtFont" class="form-control">
+    <option *ngFor="let font of FontList" [value]="font">{{font}}</option>
+</select>
