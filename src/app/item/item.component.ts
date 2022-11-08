@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Candidat } from '../models/candidat';
 
 @Component({
   selector: 'app-item',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./item.component.css'],
 })
 export class ItemComponent implements OnInit {
-  @Input() oneCandidat;
+  @Input() oneCandidat: Candidat;
   @Output() msgToListe = new EventEmitter();
   constructor() {}
 

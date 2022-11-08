@@ -18,6 +18,7 @@ export class FirstComponent implements OnInit {
   }
 
   traitementDuParent(msg) {
+    alert(msg);
     this.name = msg;
   }
 }

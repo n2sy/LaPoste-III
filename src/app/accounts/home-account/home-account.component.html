@@ -1,0 +1,7 @@
+<div class="container">
+    <app-add-account (msgToHome)="traiter($event)">
+
+    </app-add-account>
+
+    <app-item-account *ngFor="let acc of tabAccounts" [oneAccount]="acc"></app-item-account>
+</div>

@@ -1,0 +1,14 @@
+<div>
+    <label for="">Account Name : </label>
+    <input [(ngModel)]="name" type="text" class="form-control">
+
+    <label for="">Status Account</label>
+    <select [(ngModel)]="statut" class="form-control">
+        <option value=""></option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        <option value="unknown">Unknown</option>
+    </select>
+    <br>
+    <button (click)="addAccount()" class="btn btn-primary">Add Account</button>
+</div>
