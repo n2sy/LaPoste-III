@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-servers.component.css'],
 })
 export class ManageServersComponent implements OnInit {
+  inputStatut = '';
   tabServers = [
     {
       name: 'Production Server',

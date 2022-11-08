@@ -8,9 +8,9 @@ import { Candidat } from '../models/candidat';
 })
 export class CvComponent implements OnInit {
   listeCandidats: Candidat[] = [
-    new Candidat(1, 'Malek', 'Mansour', 38, 'Formateur', 'nidhal.jpg'),
-    new Candidat(2, 'Homer', 'Simpson', 18, 'Plombier', 'homer.jpg'),
-    new Candidat(3, 'Bart', 'Simpson', 58, 'Ingénieur', 'bart.jpeg'),
+    new Candidat(1, 'nidhal', 'jelassi', 38, 'Formateur', 'nidhal.jpg'),
+    new Candidat(2, 'homer', 'simpson', 18, 'Plombier', 'homer.jpg'),
+    new Candidat(3, 'bart', 'simpson', 58, 'Ingénieur', 'bart.jpeg'),
   ];
   selectedCand: Candidat;
   constructor() {}

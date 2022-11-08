@@ -1,8 +1,10 @@
 <div class="container">
+    <input [(ngModel)]="inputStatut" type="text" class="form-control">
     <ol class="list-group">
-        <li *ngFor="let serv of tabServers" class="list-group-item" [ngClass]="affecterClass(serv.statut)">
-            {{ serv.name }} | {{ serv.type}} |
-            {{ serv.date_d }}
+        <li *ngFor="let serv of tabServers | filter:inputStatut" class="list-group-item"
+            [ngClass]="affecterClass(serv.statut)">
+            {{ serv.name | short:2 }} | {{ serv.type}} |
+            {{ serv.date_d | date | uppercase }}
             <span class="badge badge-secondary">{{ serv.statut }} </span>
 
         </li>
