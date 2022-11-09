@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ListRecruesService } from '../list-recrues.service';
 import { Candidat } from '../models/candidat';
 
 @Component({
@@ -8,7 +9,11 @@ import { Candidat } from '../models/candidat';
 })
 export class DetailsComponent implements OnInit {
   @Input() selectedCand: Candidat;
-  constructor() {}
+  constructor(private recrueSer: ListRecruesService) {}
 
   ngOnInit(): void {}
+
+  recruterCand() {
+    this.recrueSer.addRecrue(this.selectedCand);
+  }
 }
