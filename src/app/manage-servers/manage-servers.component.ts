@@ -35,6 +35,15 @@ export class ManageServersComponent implements OnInit {
   ];
   constructor() {}
 
+  addNewServer() {
+    this.tabServers.push({
+      name: 'NEW SERVER',
+      type: 'small',
+      date_d: new Date(),
+      statut: 'stable',
+    });
+  }
+
   ngOnInit(): void {}
 
   affecterClass(st) {

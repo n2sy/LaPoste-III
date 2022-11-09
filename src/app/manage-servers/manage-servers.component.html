@@ -3,10 +3,11 @@
     <ol class="list-group">
         <li *ngFor="let serv of tabServers | filter:inputStatut" class="list-group-item"
             [ngClass]="affecterClass(serv.statut)">
-            {{ serv.name | short:2 }} | {{ serv.type}} |
+            {{ serv.name | short:20 }} | {{ serv.type}} |
             {{ serv.date_d | date | uppercase }}
             <span class="badge badge-secondary">{{ serv.statut }} </span>
 
         </li>
     </ol>
+    <button (click)="addNewServer()" class="btn btn-primary">Add New Server</button>
 </div>

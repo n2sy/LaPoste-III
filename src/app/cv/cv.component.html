@@ -1,8 +1,10 @@
 <div class="row">
     <div class="col-md-5">
-        <app-liste (msgToCv)="sendDetails($event)" [tabCands]="listeCandidats"></app-liste>
+        <app-liste (msgToCv)="sendDetails($event)"></app-liste>
     </div>
     <div class="col-md-7">
         <app-details *ngIf="selectedCand" [selectedCand]="selectedCand"></app-details>
     </div>
+    <button class="btn btn-primary" (click)="addNewCand()">Add Candidat</button>
+    <button class="btn btn-danger" (click)="logCands()">Candidats From CV</button>
 </div>

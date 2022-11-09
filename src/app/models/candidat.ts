@@ -8,7 +8,7 @@ export class Candidat {
     public prenom: string,
     public age: number,
     public profession: string,
-    public avatar: string
+    public avatar?: string
   ) {
     // this.nom = nom;
     // this.prenom = prenom;
