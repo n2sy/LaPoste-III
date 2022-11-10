@@ -1,0 +1,7 @@
+<h3> {{ oneServer.nom }} </h3>
+
+<p>Le statut du serveur est {{ oneServer.statut }} </p>
+
+<button [routerLink]="['/serveurs', oneServer.id, 'edit']" [disabled]="btnDisabled" class="btn btn-info">Editer</button>
+
+<i *ngIf="btnDisabled">Impossible d'editer ce serveur</i>

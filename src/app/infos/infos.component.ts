@@ -16,6 +16,7 @@ export class InfosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    //V0
     // this.id = this.activRoute.snapshot.paramMap.get('myid');
     // V1
     // this.activRoute.params.subscribe({
@@ -27,6 +28,7 @@ export class InfosComponent implements OnInit {
     //   },
     // });
     // V2
+    this.activRoute.paramMap.subscribe(() => {});
     this.activRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
         //this.id = p.get('myid');

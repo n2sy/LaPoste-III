@@ -1,0 +1,22 @@
+<form #f="ngForm">
+    <label for="name">Adresse E-Mail</label>
+    <input #inpLogin="ngModel" required email ngModel type="text" class="form-control" name="login" id="name">
+
+    <div *ngIf="inpLogin.invalid && inpLogin.dirty" class="alert alert-danger">Ce champ doit être une adresse mail</div>
+    <label for="">Mot de passe</label>
+    <input ngModel type="text" class="form-control" name="pwd">
+
+    <label for="">Entreprise</label>
+
+    <select [ngModel]="defaultEntreprise" name="entreprise" class="form-control">
+        <option *ngFor="let e of listEntreprises" [value]="e">{{e}}</option>
+    </select>
+
+    <textarea [(ngModel)]="commentaire" name="comment" cols="5" rows="2"></textarea>
+
+    <pre>
+        {{ f.value | json}}
+    </pre>
+
+    <button (click)="onSubmit(f)" class="btn btn-primary">Submit</button>
+</form>
