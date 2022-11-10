@@ -17,6 +17,10 @@ export class ListCandidatsService {
     return this.tabCandidats;
   }
 
+  getCandidatById(id) {
+    return this.tabCandidats.find((c) => c.id == id);
+  }
+
   addCandidat() {
     this.tabCandidats.push(new Candidat(1, 'NEW', 'CANDIDAT', 38, 'Formateur'));
   }

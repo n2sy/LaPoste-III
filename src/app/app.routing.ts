@@ -12,14 +12,16 @@ const myRoutes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'cv',
+    //component: CvComponent,
     children: [
       { path: '', component: CvComponent },
       { path: 'add', component: AddComponent },
       { path: 'infos/:myid', component: InfosComponent },
       { path: 'edit/:myid', component: UpdateComponent },
-      { path: '**', component: NotFoundComponent },
+      //   { path: '**', component: NotFoundComponent },
     ],
   },
+  // { path: '', redirectTo: 'cv', pathMatch: 'full' },
   { path: 'servers', component: ManageServersComponent },
   { path: 'ms-word', component: MsWordComponent },
   { path: 'not-found', component: NotFoundComponent },
