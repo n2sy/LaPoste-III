@@ -1,4 +1,14 @@
 <form #f="ngForm">
+
+    <input required minlength="6" pattern="nidhal" #exp="ngModel" ngModel name="exemple" type="text"
+        class="form-control">
+    <div *ngIf="exp.invalid" class="alert alert-danger">
+        <p *ngIf="exp.errors['required']">Ce champ est required</p>
+        <p *ngIf="exp.errors['minlength']">Le nombre de caractères minimal est 6</p>
+        <p *ngIf="exp.errors['pattern']">Le pattern est "nidhal"</p>
+
+    </div>
+
     <label for="name">Adresse E-Mail</label>
     <input #inpLogin="ngModel" required email ngModel type="text" class="form-control" name="login" id="name">
 
@@ -19,4 +29,6 @@
     </pre>
 
     <button (click)="onSubmit(f)" class="btn btn-primary">Submit</button>
+    <button (click)="generePwd(f)" class="btn btn-danger">Générer PWD</button>
+    <button (click)="annulerForm(f)" class="btn btn-danger">Reset</button>
 </form>

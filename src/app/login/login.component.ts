@@ -17,4 +17,21 @@ export class LoginComponent implements OnInit {
   onSubmit(f: NgForm) {
     console.log(f);
   }
+
+  generePwd(f: NgForm) {
+    // f.setValue({
+    //   exemple: '',
+    //   login: '',
+    //   pwd: '123456',
+    //   entreprise: '',
+    //   comment: '',
+    // });
+    f.form.patchValue({
+      pwd: '123456',
+    });
+  }
+
+  annulerForm(f: NgForm) {
+    f.reset();
+  }
 }
