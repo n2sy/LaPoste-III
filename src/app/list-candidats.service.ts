@@ -21,7 +21,21 @@ export class ListCandidatsService {
     return this.tabCandidats.find((c) => c.id == id);
   }
 
-  addCandidat() {
-    this.tabCandidats.push(new Candidat(1, 'NEW', 'CANDIDAT', 38, 'Formateur'));
+  // addCandidat() {
+  //   this.tabCandidats.push(new Candidat(1, 'NEW', 'CANDIDAT', 38, 'Formateur'));
+  // }
+
+  deleteCandidat(cand) {
+    let i = this.tabCandidats.indexOf(cand);
+    this.tabCandidats.splice(i, 1);
+  }
+
+  addCandidat(cand) {
+    cand.id = this.tabCandidats[this.tabCandidats.length - 1].id + 1;
+    this.tabCandidats.push(cand);
+  }
+  updateCandidat(cand) {
+    let i = this.tabCandidats.indexOf(cand);
+    this.tabCandidats[i] = cand;
   }
 }

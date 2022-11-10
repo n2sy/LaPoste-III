@@ -22,7 +22,7 @@ export class CvComponent implements OnInit {
   }
 
   addNewCand() {
-    this.candSer.addCandidat();
+    // this.candSer.addCandidat();
   }
 
   logCands() {
