@@ -29,12 +29,19 @@ export class InfosComponent implements OnInit {
     //   },
     // });
     // V2
-    this.activRoute.paramMap.subscribe(() => {});
+    //this.activRoute.paramMap.subscribe(() => {});
     this.activRoute.paramMap.subscribe({
       next: (p: ParamMap) => {
         //this.id = p.get('myid');
         console.log(p.get('myid'));
-        this.cand = this.candSer.getCandidatById(p.get('myid'));
+        this.candSer.getCandidatByIdAPI(p.get('myid')).subscribe({
+          next: (response) => {
+            this.cand = response;
+          },
+          error: (err) => {
+            console.log(err);
+          },
+        });
       },
       error: (err) => {
         console.log(err);
@@ -44,8 +51,15 @@ export class InfosComponent implements OnInit {
 
   onDelete() {
     if (confirm('Etes vous sur de vouloir supprimer ce candidat ?')) {
-      this.candSer.deleteCandidat(this.cand);
-      this.router.navigateByUrl('/cv');
+      this.candSer.deleteCandidatAPI(this.cand._id).subscribe({
+        next: (response) => {
+          alert(response['message']);
+          this.router.navigateByUrl('/cv');
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
     }
   }
 }

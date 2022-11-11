@@ -8,7 +8,7 @@ import { Candidat } from '../models/candidat';
   styleUrls: ['./details.component.css'],
 })
 export class DetailsComponent implements OnInit {
-  @Input() selectedCand: Candidat;
+  @Input() selectedCand;
   constructor(private recrueSer: ListRecruesService) {}
 
   ngOnInit(): void {}

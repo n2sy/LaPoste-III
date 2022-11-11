@@ -9,7 +9,7 @@ import { ListCandidatsService } from '../list-candidats.service';
   styleUrls: ['./liste.component.css'],
 })
 export class ListeComponent implements OnInit {
-  tabCands: Candidat[] = [];
+  @Input() tabCands: Candidat[] = [];
   @Output() msgToCv = new EventEmitter();
   constructor(private candSer: ListCandidatsService) {}
 

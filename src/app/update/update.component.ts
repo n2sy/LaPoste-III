@@ -20,7 +20,11 @@ export class UpdateComponent implements OnInit {
       next: (p: ParamMap) => {
         //this.id = p.get('myid');
         console.log(p.get('myid'));
-        this.cand = this.candSer.getCandidatById(p.get('myid'));
+        this.candSer.getCandidatByIdAPI(p.get('myid')).subscribe({
+          next: (response) => {
+            this.cand = response;
+          },
+        });
       },
       error: (err) => {
         console.log(err);
@@ -29,7 +33,14 @@ export class UpdateComponent implements OnInit {
   }
 
   onUpdate() {
-    this.candSer.updateCandidat(this.cand);
-    this.router.navigateByUrl('/cv');
+    this.candSer.updateCandidatAPI(this.cand).subscribe({
+      next: (response) => {
+        alert(response['message']);
+        this.router.navigateByUrl('/cv');
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 }

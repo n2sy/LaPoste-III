@@ -9,7 +9,7 @@ import { FirstService } from '../services/first.service';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent implements OnInit {
-  listeCandidats: Candidat[] = [];
+  listeCandidats: any = [];
   selectedCand: Candidat;
   constructor(
     private candSer: ListCandidatsService,
@@ -17,7 +17,15 @@ export class CvComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.listeCandidats = this.candSer.getAllCandidats();
+    // this.listeCandidats = this.candSer.getAllCandidats();
+    this.candSer.getAllCandidatsAPI().subscribe({
+      next: (response) => {
+        this.listeCandidats = response;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
     this.first.showInfos();
   }
 

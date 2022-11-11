@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-5">
-        <app-liste (msgToCv)="sendDetails($event)"></app-liste>
+        <app-liste [tabCands]="listeCandidats" ta (msgToCv)="sendDetails($event)"></app-liste>
     </div>
     <div class="col-md-7">
         <app-details *ngIf="selectedCand" [selectedCand]="selectedCand"></app-details>

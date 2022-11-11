@@ -30,6 +30,8 @@ import { UpdateComponent } from './update/update.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SubModule } from './sub/sub.module';
 import { LoginComponent } from './login/login.component';
+import { ExpHttpComponent } from './exp-http/exp-http.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -58,8 +60,15 @@ import { LoginComponent } from './login/login.component';
     UpdateComponent,
     NotFoundComponent,
     LoginComponent,
+    ExpHttpComponent,
   ],
-  imports: [BrowserModule, FormsModule, LAPOSTE_ROUTING, SubModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    LAPOSTE_ROUTING,
+    SubModule,
+    HttpClientModule,
+  ],
   providers: [FirstService],
   bootstrap: [AppComponent],
 })
